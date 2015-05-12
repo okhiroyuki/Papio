@@ -33,24 +33,19 @@ function sendMail(api,email){
     url: "https://mandrillapp.com/api/1.0/messages/send.json",
     data: {
       'key': api,
-      //      'key': 'sIe6PNJWJEH43nJbZhDGdw',
       'message': {
-        //'from_email': 'ok.okada.hiroyuki@gmail.com',
         'from_email': email,
         'to': [
           {
-            //'email': 'ok.okada.hiroyuki@gmail.com',
             'email': email,
             'type': 'to'
           }
         ],
         'subject': subject[0],
-        //'html':$('#message').val()
         'html': txtVal
       }
     }
   });
-  $('#message').val("");
 }
 
 document.addEventListener('DOMContentLoaded', function () {
