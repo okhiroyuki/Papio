@@ -108,6 +108,17 @@ document.addEventListener('DOMContentLoaded', function () {
       console.log('item saved.');
     });
   });
+
+  document.querySelector('#add-link').addEventListener("click", function (evt) {
+    chrome.tabs.getSelected(null, function(tab) {
+      var txtVal = $('#message').val();
+      if(txtVal.length > 0){
+        txtVal += '\n';
+      }
+      txtVal += tab.title + '\n' + tab.url + '\n';
+      $('#message').val(txtVal);
+    });
+  });
 });
 
 $(".button-collapse").sideNav();
