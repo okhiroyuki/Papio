@@ -69,6 +69,7 @@ function sendMail(api,email){
       }
     }
   });
+  $('#message').val("");
 }
 
 document.addEventListener('DOMContentLoaded', function () {
